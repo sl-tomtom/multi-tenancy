@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\applications\application.tenancy\src\application.tenancy.csproj" />
+    <ProjectReference Include="..\..\..\infrastructures\infrastructures.common\src\infrastructures.common.csproj"/>
+    <ProjectReference Include="..\..\..\infrastructures\infrastructures.logicimmo\src\infrastructures.logicimmo.csproj"/>
+    <ProjectReference Include="..\..\..\infrastructures\infrastructures.seloger\src\infrastructures.seloger.csproj"/>
+  </ItemGroup>
+
+</Project>
