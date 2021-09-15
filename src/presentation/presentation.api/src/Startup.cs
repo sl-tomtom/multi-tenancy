@@ -1,5 +1,6 @@
 using application.tenancy.DependencyInjection;
 using infrastructures.common.DependencyInjection;
+using infrastructures.DependencyInjection;
 using infrastructures.logicimmo.DependencyInjection;
 using infrastructures.seloger.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
@@ -28,6 +29,7 @@ namespace presentation.api
             services.AddSelogerInfrastructure();
             services.AddCommonInfrastructure();
             services.AddTenantApplication();
+            services.AddInfrastructure();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

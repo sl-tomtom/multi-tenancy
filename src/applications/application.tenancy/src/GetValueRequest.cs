@@ -6,21 +6,27 @@ using MediatR;
 namespace application.tenancy
 {
 
-    public class GetValueRequest : IRequest<int>
+    public class BaseRequest<TResult> :IRequest<TResult>
     {
+        public string Infrastructure { get; set; }
+    }
+
+    public class GetValueRequest : BaseRequest<int>
+    {
+
     }
 
     internal class GetValueRequestHandler : IRequestHandler<GetValueRequest, int>
     {
-        private readonly IValueService _valueService;
-        public GetValueRequestHandler(IValueService valueService)
+        private readonly IInfrastructureProvider<IValueService> _valueServiceProvider;
+        public GetValueRequestHandler(IInfrastructureProvider<IValueService> valueServiceProvider)
         {
-            this._valueService = valueService;
+            this._valueServiceProvider = valueServiceProvider;
         }
 
         public Task<int> Handle(GetValueRequest request, CancellationToken cancellationToken)
         {
-            return Task.FromResult(_valueService.GetValue());
+            return Task.FromResult(_valueServiceProvider.GetService().GetValue());
         }
     }
 }

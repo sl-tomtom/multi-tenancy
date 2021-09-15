@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\applications\application.tenancy\src\application.tenancy.csproj" />
+    <ProjectReference Include="..\..\..\infrastructures\infrastructures\src\infrastructures.csproj"/>
     <ProjectReference Include="..\..\..\infrastructures\infrastructures.common\src\infrastructures.common.csproj"/>
     <ProjectReference Include="..\..\..\infrastructures\infrastructures.logicimmo\src\infrastructures.logicimmo.csproj"/>
     <ProjectReference Include="..\..\..\infrastructures\infrastructures.seloger\src\infrastructures.seloger.csproj"/>
